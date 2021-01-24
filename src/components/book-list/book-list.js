@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BookListItem from '../book-list-item'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import { withBookstoreService } from '../hoc'
@@ -39,11 +40,9 @@ const mapStateToProps = ({ books }) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    booksLoaded: (newBooks) => {
-      dispatch(booksLoaded(newBooks))
-    }
-  }
+  return bindActionCreators({
+    booksLoaded
+  }, dispatch)
 }
 
 export default withBookstoreService()(connect(mapStateToProps, mapDispatchToProps)(BookList))
