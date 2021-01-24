@@ -4,7 +4,7 @@ const updateBookList = (state, action) => {
       books: [],
       loading: true,
       error: null,
-    };
+    }
   }
 
   switch (action.type) {
