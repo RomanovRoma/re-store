@@ -1,5 +1,3 @@
-import updateBookList from "./book-list";
-
 const updateCartItems = (cartItems, item, idx) => {
   if (item.count === 0) {
     return [...cartItems.slice(0, idx), ...cartItems.slice(idx + 1)];
@@ -66,4 +64,4 @@ const updateShoppingCart = (state, action) => {
   }
 };
 
-export default updateShoppingCart
+export default updateShoppingCart;
